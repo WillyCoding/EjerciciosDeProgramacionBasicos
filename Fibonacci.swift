@@ -9,42 +9,42 @@
 import Foundation
 
 //  Declaracion de las funciones
-func Fibonacci(_ Numero:Int) -> Int {
-    if Numero == 0 || Numero == 1 {
-        return Numero
+func fibonacci(_ numero:Int) -> Int {
+    if numero == 0 || numero == 1 {
+        return numero
     } else {
-        return Fibonacci(Numero - 2) + Fibonacci(Numero - 1)
+        return fibonacci(numero - 2) + fibonacci(numero - 1)
     }
 }
 
 //  Variables y constantes
-var NumeroUsuario:Int = 0
-var NumeroUsuarioString:String?
-var NumeroFibonacci:Int = 0
+var numeroUsuario:Int = 0
+var numeroUsuarioString:String?
+var numeroFibonacci:Int = 0
 
 //  Desarrollo del programa
 print("Introduce un numero: ")
-NumeroUsuarioString = readLine()
+numeroUsuarioString = readLine()
 
-guard let NumeroRecogido = NumeroUsuarioString else {
+guard let numeroRecogido = numeroUsuarioString else {
     print ("Valor introducido Nil")
     exit (-1)
 }
 
-if NumeroRecogido.isEmpty {
+if numeroRecogido.isEmpty {
     print ("No se ha introducido nada")
     exit (-1)
 }
 
-guard let NumeroEntero = Int(NumeroRecogido) else {
+guard let numeroEntero = Int(numeroRecogido) else {
     print ("ERROR: No se ha introducio un numero")
     exit (-1)
 }
 
-NumeroUsuario = NumeroEntero
+numeroUsuario = numeroEntero
 
-for SucessionFibonnaci in 0...NumeroUsuario {
-    NumeroFibonacci = Fibonacci(SucessionFibonnaci)
+for sucessionFibonnaci in 0...numeroUsuario {
+    numeroFibonacci = fibonacci(sucessionFibonnaci)
     print(NumeroFibonacci)
 }
 
